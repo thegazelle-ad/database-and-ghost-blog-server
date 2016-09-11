@@ -42,7 +42,7 @@ Then do:
 
 within this folder.
 
-When you are done with this copy the config.example.js file to a new file config.js as such if using bash:
+When you are done with this, copy the config.example.js file to a new file config.js as such if using bash:
 
 `cp config.example.js config.js`
 
