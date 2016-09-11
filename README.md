@@ -8,18 +8,18 @@ After you have installed MariaDB you should download the latest database dump fr
 
 https://drive.google.com/drive/u/1/folders/0B5ceCeOuBd1tVWNSX2k2RVUtOFk
 
-If you do not have access request it from the lead developers who will give it to you if you are part of the development team.
+If you do not have access, request it from the lead developers who will give it to you if you are part of the development team.
 
 The dumps will be in the folder "Database Dumps/Timestamped Ghost Dumps".
 
 When you have MariaDB installed you have to create a database and source it with the dump you just downloaded. If you are unfamiliar with MySQL syntax here is an example of doing this from console:
 
-`
+```
 mysql -u root -ppassword
 create database the_gazelle;
 use the_gazelle;
 source myDump.dump;
-`
+```
 
 Where the text after -p is the password you have set for the database (could also be empty) and what I wrote after source is the path to the dump you downloaded from the directory you initiated the mysql command in.
 
