@@ -3,6 +3,14 @@
 
 // Ghost runs in `development` mode by default. Full documentation can be found at http://support.ghost.org/config/
 
+var BLOG_HOST = '127.0.0.1';
+var BLOG_PORT = '2368';
+var BLOG_URL = 'http://'+BLOG_HOST+(BLOG_PORT ? ':'+BLOG_PORT : '');
+var DATABASE_HOST = '127.0.0.1';
+var DATABASE_USER = 'root';
+var DATABASE_PASSWORD = 'password';
+var DATABASE_NAME = 'the_gazelle';
+
 var path = require('path'),
     config;
 
@@ -11,20 +19,37 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
-        mail: {},
+        url: BLOG_URL,
         database: {
-            client: 'sqlite3',
+            client: 'mysql',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
-            },
-            debug: false
+                host     : DATABASE_HOST,
+                user     : DATABASE_USER,
+                password : DATABASE_PASSWORD,
+                database : DATABASE_NAME,
+                charset  : 'utf8'
+            }
         },
-
         server: {
-            host: '127.0.0.1',
-            port: '2368'
-        }
+            host: BLOG_HOST,
+            port: BLOG_PORT
+        },
+        logging: false,
+
+        // Uncomment the comment block below and fill in correct mail config to setup the e-mail
+        // so you can invite other admins, and get them to send you a password
+        // if you forgot it etc.
+        // If you need further instructions see http://support.ghost.org/mail/
+        // mail: {
+        //     transport: 'SMTP',
+        //     options: {
+        //         service: 'Mailgun',
+        //         auth: {
+        //             user: 'postmaster@tryghosttest.mailgun.org',
+        //             pass: '25ip4bzyjwo1'
+        //         }
+        //     }
+        // },
     },
 
     // ### Development **(default)**
