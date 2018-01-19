@@ -2,7 +2,7 @@
 
 ## SETUP
 ### MARIADB
-First go here: https://downloads.mariadb.org/mariadb/repositories and follow the instructions to download MariaDB if you are using Linux. If you are not using Linux you should easily be able to Google how to download it for your operating system. If you are only setting up for development and not for deployment you can also use MySQL which is also 100% compatible.
+First go here: https://downloads.mariadb.org/mariadb/repositories and follow the instructions to download MariaDB if you are using Linux. We use 10.1 in production / CircleCI so that's the recommended version. If you are not using Linux you should easily be able to Google how to download it for your operating system. If you are only setting up for development and not for deployment you can also use MySQL which is also 100% compatible.
 
 After you have installed MariaDB you should download the latest database dump from the Gazelle Engineering Google Drive located here:
 
